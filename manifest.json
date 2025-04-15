@@ -3,8 +3,23 @@
     "description": "Base Level Extension",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://docs.google.com/document/*"
+            ],
+            "js": [
+                "scripts/content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
     "action": {
-        "default_popup": "hello.html",
-        "default_icon": "hi.png"
+        "default_popup": "popup/hello.html",
+        "default_icon": "images/hi.png"
     }
 }
